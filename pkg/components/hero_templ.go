@@ -25,7 +25,15 @@ func Hero(data *config.MetaData) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-gray-600 dark:text-gray-300 body-font\"><div class=\"container mx-auto flex px-5 pt-12 items-center justify-center flex-col\"><div class=\"bg-gradient-to-br from-indigo-500 to-purple-600 p-2 rounded-full select-none pointer-events-none\"><img class=\"object-cover object-center rounded-full\" alt=\"hero\" src=\"/static/icon.png\"></div><div class=\"text-center lg:w-2/3 w-full mt-6\"><h1 class=\"title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"text-gray-600 dark:text-gray-300 body-font\"><div class=\"container mx-auto flex px-5 pt-12 items-center justify-center flex-col\"><div class=\"bg-gradient-to-br from-indigo-500 to-purple-600 p-2 rounded-full select-none pointer-events-none\"><img class=\"object-cover object-center rounded-full\" alt=\"hero\" src=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(data.Image))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"></div><div class=\"text-center lg:w-2/3 w-full mt-6\"><h1 class=\"title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

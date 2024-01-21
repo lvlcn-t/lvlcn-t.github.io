@@ -22,6 +22,7 @@ type SocialItem struct {
 type MetaData struct {
 	Name    string `yaml:"name"`
 	Role    string `yaml:"role"`
+	Image   string `yaml:"image"`
 	AboutMe string `yaml:"aboutMe"`
 }
 
