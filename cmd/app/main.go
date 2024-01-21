@@ -1,52 +1,50 @@
 package main
 
 import (
+	"log/slog"
 	"os"
-	"path/filepath"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lvlcn-t/ChronoTemplify/internal/generator"
 	"github.com/lvlcn-t/ChronoTemplify/pkg/config"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/handlers"
+	"github.com/lvlcn-t/ChronoTemplify/pkg/register"
 	"github.com/lvlcn-t/ChronoTemplify/pkg/renderer"
 )
 
-var pages = map[string]string{
-	"/":         "public/index.html",
-	"/projects": "public/projects/index.html",
-}
+const (
+	dataFile  = "./data/data.yaml"
+	staticDir = "./static"
+)
 
 func main() {
+	log := slog.Default()
 	r := gin.Default()
 	r.HTMLRender = renderer.New()
+	r.Static("/static", staticDir)
 
-	data, err := config.LoadData("./static/data/data.yaml")
+	data, err := config.LoadData(dataFile)
 	if err != nil {
+		log.Error("Failed to load yaml data", "error", err, "filepath", dataFile)
 		panic(err)
 	}
 
-	h := handlers.NewHomeHandler(&data)
-	p := handlers.NewProjectsHandler()
-
-	r.Static("/static", "./static")
-
-	_ = r.GET("/", h.View)
-	_ = r.GET("/projects", p.View)
-
-	for route, path := range pages {
-		b, err := generator.GeneratePage(r, route)
-		if err != nil {
-			panic(err)
-		}
-
-		err = os.MkdirAll(filepath.Dir(path), os.ModePerm)
-		if err != nil {
-			panic(err)
-		}
-		os.WriteFile(path, b, 0600)
+	for route, constructor := range register.HandlerMap {
+		handler := constructor(&data)
+		r.GET(route, handler.View)
 	}
 
-	if err := r.Run(); err != nil {
+	// Generate the static site
+	err = generator.GenerateStaticSite(r, generator.StaticSite{
+		OutDir:    "./public",
+		StaticDir: staticDir,
+	})
+	if err != nil {
+		log.Error("Failed to generate static site", "error", err)
+		panic(err)
+	}
+
+	if err := r.Run(":8080"); err != nil {
+		log.Error("Failed to run http server", "error", err)
 		os.Exit(1)
 	}
 }

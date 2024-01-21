@@ -13,7 +13,7 @@ var _ handlers.Handler = (*projectsHandler)(nil)
 
 type projectsHandler struct{}
 
-func NewHandler(data *config.Data) handlers.Handler {
+func NewHandler(_ *config.Data) handlers.Handler {
 	return &projectsHandler{}
 }
 
