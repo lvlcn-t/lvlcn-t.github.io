@@ -1,0 +1,57 @@
+kind: Data
+metadata:
+  name: Tom
+  role: DevOps Engineer
+  aboutMe: |
+    I am a DevOps Engineer with extensive experience in Container as a Service (CaaS). 
+    I specialize in orchestrating containerized applications using Kubernetes, developing 
+    scalable services in Go and TypeScript, and implementing CI/CD pipelines with GitLab CI.
+socials:
+  - name: GitHub
+    url: https://github.com/lvlcn-t
+    imagePath: /static/github.svg
+
+  - name: LinkedIn
+    url: https://linkedin.com/
+    imagePath: /static/linkedin.svg
+
+techStack:
+  - name: Go
+    description: Development and Automation
+    imagePath: /static/golang.svg
+    url: https://go.dev/
+
+  - name: TypeScript
+    description: Frontend Development
+    imagePath: /static/typescript.svg
+    url: https://www.typescriptlang.org/
+
+  - name: Kubernetes
+    description: Container Orchestration
+    imagePath: /static/k8s.svg
+    url: https://kubernetes.io/
+
+  - name: Fleet
+    description: Continuous Delivery with GitOps
+    imagePath: /static/fleet.svg
+    url: https://fleet.rancher.io/
+
+  - name: React
+    description: Frontend Development
+    imagePath: /static/react.svg
+    url: https://react.dev/
+
+  - name: Tailwind CSS
+    description: UI Design
+    imagePath: /static/tailwind.svg
+    url: https://tailwindcss.com/
+
+  - name: templ
+    description: HTML Templating in Go
+    imagePath: /static/templ.svg
+    url: https://templ.guide/
+
+  - name: GitLab CI/CD
+    description: Continuous Integration
+    imagePath: /static/gitlab.svg
+    url: https://gitlab.com/

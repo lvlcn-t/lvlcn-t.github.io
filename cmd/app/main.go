@@ -13,7 +13,7 @@ func main() {
 	r := gin.Default()
 	r.HTMLRender = renderer.New()
 
-	data, err := config.LoadData("data.yaml")
+	data, err := config.LoadData("./static/data/data.yaml")
 	if err != nil {
 		panic(err)
 	}
