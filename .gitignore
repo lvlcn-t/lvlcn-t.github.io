@@ -30,3 +30,6 @@ go.work
 # Environment
 .env
 !.env.dist
+
+# Generated pages
+public/
