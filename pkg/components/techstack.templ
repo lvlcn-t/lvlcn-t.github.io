@@ -1,0 +1,33 @@
+package components
+
+import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
+
+templ TechStack(items ...config.TechStackItem) {
+	<section class="text-gray-600 body-font">
+		<div class="container px-5 py-24 mx-auto">
+			<div class="flex flex-wrap w-full mb-20">
+				<div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+					<h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Tech Stack</h1>
+					<div class="h-1 w-20 bg-indigo-500 rounded"></div>
+				</div>
+			</div>
+			<div class="flex flex-wrap -m-4">
+				for _, item := range items {
+					@techStackCard(item.Name, item.Description, item.ImagePath, item.Url)
+				}
+			</div>
+		</div>
+	</section>
+}
+
+templ techStackCard(name, description, imagePath, url string) {
+	<div class="p-4 md:w-1/4 sm:w-1/2 w-full transition duration-300 ease-in-out">
+		<a href={ templ.URL(url) }>
+			<div class="transform hover:scale-105 border-2 border-gray-200 px-4 py-6 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 dark:border-gray-700 dark:from-gray-700 dark:to-gray-800">
+				<img class="h-40 rounded w-full object-scale-down object-center mb-6" src={ imagePath } alt="@name"/>
+				<h3 class="tracking-widest text-white text-xs font-medium title-font">{ name }</h3>
+				<h2 class="text-lg text-white font-medium title-font mb-4">{ description }</h2>
+			</div>
+		</a>
+	</div>
+}

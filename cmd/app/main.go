@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/lvlcn-t/ChronoTemplify/pkg/config"
 	"github.com/lvlcn-t/ChronoTemplify/pkg/handlers"
@@ -24,5 +26,7 @@ func main() {
 	_ = r.GET("/", h.View)
 	_ = r.GET("/projects", p.View)
 
-	r.Run()
+	if err := r.Run(); err != nil {
+		os.Exit(1)
+	}
 }

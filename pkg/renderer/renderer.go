@@ -30,7 +30,7 @@ func (t templRender) WriteContentType(w http.ResponseWriter) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 }
 
-func (t *templRender) Instance(name string, data any) render.Render {
+func (t *templRender) Instance(_ string, data any) render.Render {
 	if templData, ok := data.(templ.Component); ok {
 		return &templRender{
 			Code: http.StatusOK,

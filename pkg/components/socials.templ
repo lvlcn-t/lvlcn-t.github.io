@@ -1,0 +1,19 @@
+package components
+
+import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
+
+templ Socials(items ...config.SocialItem) {
+	<section class="text-gray-600 body-font">
+		<div class="container px-5 py-6 mx-auto flex items-center justify-center">
+			for _, item := range items {
+				@socialIcon(item.Url, item.Name, item.ImagePath)
+			}
+		</div>
+	</section>
+}
+
+templ socialIcon(url, alt, imagePath string) {
+	<a href={ templ.URL(url) } class="text-gray-500">
+		<img src={ imagePath } alt={ alt } class="w-8 h-8 mx-2"/>
+	</a>
+}
