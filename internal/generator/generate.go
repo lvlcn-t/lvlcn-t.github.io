@@ -79,6 +79,11 @@ func copyFile(src, dst string) error {
 	}
 	defer srcFile.Close()
 
+	// Create the directory structure for the destination file
+	if err := os.MkdirAll(filepath.Dir(dst), fileMode); err != nil {
+		return fmt.Errorf("failed to create directory for %s: %w", dst, err)
+	}
+
 	// Create the destination file for writing
 	destFile, err := os.Create(dst)
 	if err != nil {
