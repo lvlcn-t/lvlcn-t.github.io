@@ -1,16 +1,18 @@
 package layout
 
 templ Header() {
-	<header class="bg-gray-800 text-white body-font shadow w-full dark:bg-gray-900">
-		<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-			<a class="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="/">
-				<img src="https://avatars.githubusercontent.com/u/75443136" alt="Home" class="w-8 h-8"/>
-				<span class="ml-3 text-xl">lvlcn-t</span>
-			</a>
-			<nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-				<a class="mr-5 hover:text-indigo-300 transition duration-300 ease-in-out" href="/">Home</a>
-				<a class="mr-5 hover:text-indigo-300 transition duration-300 ease-in-out" href="/projects">Projects</a>
-			</nav>
-		</div>
-	</header>
+	<div class="top-0 sticky w-full z-50 text-white bg-gray-800 dark:bg-gray-900">
+		<header class="backdrop-filter backdrop-blur-md">
+			<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+				<a class="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="/">
+					<img src="https://avatars.githubusercontent.com/u/75443136" alt="Home" class="w-10 h-10 rounded-full object-cover"/>
+					<span class="ml-3 text-xl">lvlcn-t</span>
+				</a>
+				<nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+					<a class="mr-5 hover:text-indigo-300 transition duration-300 ease-in-out" href="/">Home</a>
+					<a class="mr-5 hover:text-indigo-300 transition duration-300 ease-in-out" href="/projects">Projects</a>
+				</nav>
+			</div>
+		</header>
+	</div>
 }

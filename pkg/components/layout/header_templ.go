@@ -23,7 +23,7 @@ func Header() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"bg-gray-800 text-white body-font shadow w-full dark:bg-gray-900\"><div class=\"container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center\"><a class=\"flex title-font font-medium items-center text-white mb-4 md:mb-0\" href=\"/\"><img src=\"https://avatars.githubusercontent.com/u/75443136\" alt=\"Home\" class=\"w-8 h-8\"> <span class=\"ml-3 text-xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"top-0 sticky w-full z-50 text-white bg-gray-800 dark:bg-gray-900\"><header class=\"backdrop-filter backdrop-blur-md\"><div class=\"container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center\"><a class=\"flex title-font font-medium items-center text-white mb-4 md:mb-0\" href=\"/\"><img src=\"https://avatars.githubusercontent.com/u/75443136\" alt=\"Home\" class=\"w-10 h-10 rounded-full object-cover\"> <span class=\"ml-3 text-xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -50,7 +50,7 @@ func Header() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></nav></div></header>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></nav></div></header></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
