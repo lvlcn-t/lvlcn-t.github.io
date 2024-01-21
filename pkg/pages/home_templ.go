@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "github.com/lvlcn-t/ChronoTemplify/pkg/components"
+import "github.com/lvlcn-t/ChronoTemplify/pkg/components/home"
 import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
 
 func Home(data *config.Data) templ.Component {
@@ -30,23 +30,23 @@ func Home(data *config.Data) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.Hero(&data.MetaData).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = home.Hero(&data.MetaData).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.About(data.MetaData.AboutMe).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = home.About(data.MetaData.AboutMe).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.TechStack(data.TechStack...).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = home.TechStack(data.TechStack...).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.Contact().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = home.Contact().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.Socials(data.Socials...).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = home.Socials(data.Socials...).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

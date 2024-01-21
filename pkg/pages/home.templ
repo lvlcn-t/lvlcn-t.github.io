@@ -1,14 +1,14 @@
 package pages
 
-import "github.com/lvlcn-t/ChronoTemplify/pkg/components"
+import "github.com/lvlcn-t/ChronoTemplify/pkg/components/home"
 import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
 
 templ Home(data *config.Data) {
 	<div>
-		@components.Hero(&data.MetaData)
-		@components.About(data.MetaData.AboutMe)
-		@components.TechStack(data.TechStack...)
-		@components.Contact()
-		@components.Socials(data.Socials...)
+		@home.Hero(&data.MetaData)
+		@home.About(data.MetaData.AboutMe)
+		@home.TechStack(data.TechStack...)
+		@home.Contact()
+		@home.Socials(data.Socials...)
 	</div>
 }
