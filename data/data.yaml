@@ -2,7 +2,7 @@ kind: Data
 metadata:
   name: Tom
   role: DevOps Engineer
-  image: /static/img/icon.png
+  image: https://avatars.githubusercontent.com/u/75443136
   aboutMe: |
     I am a DevOps Engineer with extensive experience in Container as a Service (CaaS). 
     I specialize in orchestrating containerized applications using Kubernetes, developing 
@@ -10,49 +10,49 @@ metadata:
 socials:
   - name: GitHub
     url: https://github.com/lvlcn-t
-    imagePath: /static/img/github.svg
+    imagePath: https://www.svgrepo.com/show/512317/github-142.svg
 
   - name: LinkedIn
     url: https://linkedin.com/
-    imagePath: /static/img/linkedin.svg
+    imagePath: https://www.svgrepo.com/show/448234/linkedin.svg
 
 techStack:
   - name: Go
     description: Development and Automation
-    imagePath: /static/img/golang.svg
+    imagePath: https://www.svgrepo.com/show/353795/go.svg
     url: https://go.dev/
 
   - name: TypeScript
     description: Frontend Development
-    imagePath: /static/img/typescript.svg
+    imagePath: https://www.svgrepo.com/show/354478/typescript-icon.svg
     url: https://www.typescriptlang.org/
 
   - name: Kubernetes
     description: Container Orchestration
-    imagePath: /static/img/k8s.svg
+    imagePath: https://www.svgrepo.com/show/448233/kubernetes.svg
     url: https://kubernetes.io/
 
   - name: Fleet
     description: Continuous Delivery with GitOps
-    imagePath: /static/img/fleet.svg
+    imagePath: https://fleet.rancher.io/img/logo.svg
     url: https://fleet.rancher.io/
 
   - name: React
     description: Frontend Development
-    imagePath: /static/img/react.svg
+    imagePath: https://www.svgrepo.com/show/493719/react-javascript-js-framework-facebook.svg
     url: https://react.dev/
 
   - name: Tailwind CSS
     description: UI Design
-    imagePath: /static/img/tailwind.svg
+    imagePath: https://www.svgrepo.com/show/374118/tailwind.svg
     url: https://tailwindcss.com/
 
   - name: templ
     description: HTML Templating in Go
-    imagePath: /static/img/templ.svg
+    imagePath: https://templ.guide/img/logo.svg
     url: https://templ.guide/
 
   - name: GitLab CI/CD
     description: Continuous Integration
-    imagePath: /static/img/gitlab.svg
+    imagePath: https://www.svgrepo.com/show/448226/gitlab.svg
     url: https://gitlab.com/
