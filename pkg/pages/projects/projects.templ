@@ -1,4 +1,21 @@
 package projects
 
-templ Projects() {
+templ Projects(repos []Repository) {
+	<div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 py-6">
+		for _, repo := range repos {
+			@repositoryCard(repo.Name, repo.Url, repo.Description)
+		}
+	</div>
+}
+
+templ repositoryCard(name, url, desc string) {
+	<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col">
+		<div class="flex-grow px-6 py-4">
+			<div class="font-bold text-xl mb-2">{ name }</div>
+			<p class="text-gray-700 text-base">{ desc }</p>
+		</div>
+		<div class="px-6 pt-4 pb-2">
+			<a href={ templ.SafeURL(url) } class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View on GitHub</a>
+		</div>
+	</div>
 }
