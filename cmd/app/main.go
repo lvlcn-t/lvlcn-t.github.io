@@ -34,10 +34,7 @@ func main() {
 	}
 
 	// Generate the static site
-	err = generator.GenerateStaticSite(r, generator.StaticSite{
-		OutDir:    "./public",
-		StaticDir: staticDir,
-	})
+	err = generator.GenerateStaticSite(r, "./public", os.DirFS("."))
 	if err != nil {
 		log.Error("Failed to generate static site", "error", err)
 		panic(err)
