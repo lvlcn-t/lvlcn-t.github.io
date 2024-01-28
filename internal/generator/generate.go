@@ -15,7 +15,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const fileMode fs.FileMode = 0o777
+const fileMode fs.FileMode = 0o777 // TODO: why is it only working with 777 and not even 666?
 
 // GenerateStaticSite generates a static site by iterating over the routes in a Gin router
 // and creating corresponding HTML files in the specified output directory.
@@ -87,7 +87,7 @@ func copyFileFS(fsys fs.FS, src, dst string) error {
 	}
 	defer srcFile.Close()
 
-	if err := os.MkdirAll(filepath.Dir(dst), fileMode); err != nil {
+	if err = os.MkdirAll(filepath.Dir(dst), fileMode); err != nil {
 		return fmt.Errorf("failed to create directory for %s: %w", dst, err)
 	}
 
