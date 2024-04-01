@@ -1,0 +1,20 @@
+name: GitHub Pages Metadata
+description: This action defines the metadata for the static site deployment.
+author: lvlcn-t
+runs:
+  using: "node20"
+  main: "dist/index.js"
+inputs:
+  token:
+    description: "GitHub token"
+    default: ${{ github.token }}
+    required: true
+outputs:
+  base_url:
+    description: https://lvlcn-t.dev
+  origin:
+    description: https://lvlcn-t.dev
+  host:
+    description: https://lvlcn-t.dev
+  base_path:
+    description: /
