@@ -3,6 +3,7 @@ package main
 import (
 	"log/slog"
 	"os"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lvlcn-t/ChronoTemplify/internal/generator"
@@ -17,6 +18,7 @@ const (
 )
 
 func main() {
+	debug := strings.EqualFold(os.Getenv("DEBUG"), "true")
 	log := slog.Default()
 	r := gin.Default()
 	r.HTMLRender = renderer.New()
@@ -40,8 +42,10 @@ func main() {
 		panic(err)
 	}
 
-	if err := r.Run(":8080"); err != nil {
-		log.Error("Failed to run http server", "error", err)
-		os.Exit(1)
+	if debug {
+		if err := r.Run(":8080"); err != nil {
+			log.Error("Failed to run http server", "error", err)
+			os.Exit(1)
+		}
 	}
 }
