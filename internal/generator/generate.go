@@ -2,6 +2,7 @@ package generator
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"io"
 	"io/fs"
@@ -107,12 +108,18 @@ func copyFileFS(fsys fs.FS, src, dst string) error {
 
 // GeneratePage simulates a request to the given route
 // Returns the page body and an error
-func GeneratePage(r *gin.Engine, route gin.RouteInfo) ([]byte, error) {
+func GeneratePage(r *gin.Engine, route gin.RouteInfo) (b []byte, err error) {
 	w := httptest.NewRecorder()
 	req, err := http.NewRequestWithContext(context.Background(), http.MethodGet, route.Path, http.NoBody)
 	if err != nil {
 		return nil, err
 	}
+	defer func(b io.Closer) {
+		if cErr := b.Close(); cErr != nil {
+			err = errors.Join(err, cErr)
+		}
+	}(req.Body)
+
 	r.ServeHTTP(w, req)
 	return w.Body.Bytes(), nil
 }
