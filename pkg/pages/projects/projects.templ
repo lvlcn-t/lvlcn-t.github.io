@@ -1,21 +1,35 @@
 package projects
 
+import "fmt"
+
 templ Projects(repos []Repository) {
 	<div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 py-6">
 		for _, repo := range repos {
-			@repositoryCard(repo.Name, repo.Url, repo.Description)
+			@repositoryCard(repo)
 		}
 	</div>
 }
 
-templ repositoryCard(name, url, desc string) {
-	<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col">
+templ repositoryCard(repo Repository) {
+	<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col hover:shadow-xl transition-shadow duration-300">
 		<div class="flex-grow px-6 py-4">
-			<div class="font-bold text-xl mb-2">{ name }</div>
-			<p class="text-gray-700 text-base">{ desc }</p>
+			if repo.Organization != "" {
+				<div class="font-bold text-xl mb-2">{ repo.Organization }/{ repo.Name }</div>
+			} else {
+				<div class="font-bold text-xl mb-2">{ repo.Name }</div>
+			}
+			<p class="text-gray-700 text-base mb-4 h-24 line-clamp-4 hover:line-clamp-none transition-all duration-300 hover:overflow-auto">{ repo.Description }</p>
+			<div class="flex items-center mb-2">
+				<i class="material-icons pr-2">code</i>
+				<p class="text-gray-500 text-sm">Language: { repo.Language }</p>
+			</div>
+			<div class="flex items-center">
+				<i class="material-icons pr-2">star</i>
+				<p class="text-gray-500 text-sm">Stars: { fmt.Sprint(repo.Stargazers) }</p>
+			</div>
 		</div>
 		<div class="px-6 pt-4 pb-2">
-			<a href={ templ.SafeURL(url) } class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View on GitHub</a>
+			<a href={ templ.SafeURL(repo.Url) } class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">View on GitHub</a>
 		</div>
 	</div>
 }
