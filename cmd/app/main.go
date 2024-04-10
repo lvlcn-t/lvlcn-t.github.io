@@ -20,7 +20,14 @@ const (
 func main() {
 	debug := strings.EqualFold(os.Getenv("DEBUG"), "true")
 	log := slog.Default()
-	r := gin.Default()
+	r := gin.New()
+	r.Use(gin.Logger())
+	if !debug {
+		gin.SetMode(gin.ReleaseMode)
+	} else {
+		r.Use(gin.Recovery())
+	}
+
 	r.HTMLRender = renderer.New()
 	r.Static("/static", staticDir)
 
