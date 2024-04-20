@@ -42,7 +42,7 @@ func GenerateStaticSite(r *gin.Engine, outDir string, fsys fs.FS) error {
 				if !d.IsDir() && strings.HasPrefix(path, "static") {
 					srcPath := path
 					destPath := filepath.Join(outDir, srcPath)
-					if err := copyFileFS(fsys, srcPath, destPath); err != nil {
+					if err := copyFile(fsys, srcPath, destPath); err != nil {
 						return fmt.Errorf("failed to copy static file %s: %w", srcPath, err)
 					}
 				}
@@ -54,7 +54,7 @@ func GenerateStaticSite(r *gin.Engine, outDir string, fsys fs.FS) error {
 			continue
 		}
 
-		b, err := GeneratePage(r, route)
+		b, err := generatePage(r, route)
 		if err != nil {
 			return fmt.Errorf("failed to generate page for route %s: %w", route.Path, err)
 		}
@@ -80,8 +80,8 @@ func GenerateStaticSite(r *gin.Engine, outDir string, fsys fs.FS) error {
 	return nil
 }
 
-// copyFileFS is a modified version of copyFile that works with fs.FS
-func copyFileFS(fsys fs.FS, src, dst string) error {
+// copyFile copies a file from the source to the destination
+func copyFile(fsys fs.FS, src, dst string) error {
 	srcFile, err := fsys.Open(src)
 	if err != nil {
 		return fmt.Errorf("failed to open source file %s: %w", src, err)
@@ -106,9 +106,9 @@ func copyFileFS(fsys fs.FS, src, dst string) error {
 	return nil
 }
 
-// GeneratePage simulates a request to the given route
-// Returns the page body and an error
-func GeneratePage(r *gin.Engine, route gin.RouteInfo) (b []byte, err error) {
+// generatePage simulates a request to the given route
+// Returns the page body and an error if one occurred
+func generatePage(r *gin.Engine, route gin.RouteInfo) (b []byte, err error) {
 	w := httptest.NewRecorder()
 	req, err := http.NewRequestWithContext(context.Background(), http.MethodGet, route.Path, http.NoBody)
 	if err != nil {
