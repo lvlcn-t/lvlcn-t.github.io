@@ -42,7 +42,6 @@ func main() {
 		r.GET(route, handler.View)
 	}
 
-	// Generate the static site
 	switch debug {
 	case false:
 		err = generator.GenerateStaticSite(r, "./public", os.DirFS("."))
