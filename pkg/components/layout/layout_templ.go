@@ -23,7 +23,7 @@ func Layout(children templ.Component) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html><head><title>lvlcn-t</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js\"></script><script src=\"https://cdn.tailwindcss.com\"></script><link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\"></head><body class=\"bg-gradient-to-r from-gray-100 to-gray-200 flex flex-col min-h-screen\"><div class=\"flex-grow\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><title>lvlcn-t</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"description\" content=\"lvlcn-t Landing Page\"><script src=\"/static/js/tailwind.min.js\"></script><link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\"><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/static/img/apple-touch-icon.png\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/static/img/favicon-32x32.png\"><link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/static/img/favicon-16x16.png\"><link rel=\"manifest\" href=\"/static/img/site.webmanifest\"></head><body class=\"bg-gradient-to-r from-gray-100 to-gray-200 flex flex-col min-h-screen\"><div class=\"flex-grow\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -20,6 +20,5 @@ func NewHandler(data *config.Data) handlers.Handler {
 }
 
 func (h *homeHandler) View(c *gin.Context) {
-	page := layout.Layout(Home(h.data))
-	c.HTML(http.StatusOK, "", page)
+	c.HTML(http.StatusOK, "", layout.Layout(Home(h.data)))
 }

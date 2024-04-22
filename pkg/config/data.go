@@ -11,6 +11,7 @@ type TechStackItem struct {
 	Description string `yaml:"description"`
 	ImagePath   string `yaml:"imagePath"`
 	Url         string `yaml:"url"`
+	Section     string `yaml:"section"`
 }
 
 type SocialItem struct {

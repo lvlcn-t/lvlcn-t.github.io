@@ -1,58 +1,133 @@
 kind: Data
 metadata:
   name: Tom
-  role: DevOps Engineer
+  role: Software Engineer / DevOps Engineer
   image: https://avatars.githubusercontent.com/u/75443136
   aboutMe: |
-    I am a DevOps Engineer with extensive experience in Container as a Service (CaaS). 
+    I am a Software Engineer and DevOps Specialist with extensive experience in Container as a Service (CaaS) and Cloud Native technologies.
     I specialize in orchestrating containerized applications using Kubernetes, developing 
-    scalable services in Go and TypeScript, and implementing CI/CD pipelines with GitLab CI.
+    scalable services in Go and Python, and automating CI/CD pipelines. I am passionate about
+    open-source software and enjoy contributing to projects that make a difference in the community.
 socials:
   - name: GitHub
     url: https://github.com/lvlcn-t
-    imagePath: https://www.svgrepo.com/show/512317/github-142.svg
+    imagePath: /static/img/socials/github.svg
 
   - name: LinkedIn
     url: https://linkedin.com/in/tom-vendolsky
-    imagePath: https://www.svgrepo.com/show/448234/linkedin.svg
+    imagePath: /static/img/socials/linkedin.svg
 
 techStack:
   - name: Go
-    description: Development and Automation
-    imagePath: https://www.svgrepo.com/show/353795/go.svg
+    description: Scalable Backend Development
+    imagePath: /static/img/techstack/development/golang.svg
     url: https://go.dev/
+    section: Development
+
+  - name: Python
+    description: Scripting and Automation
+    imagePath: /static/img/techstack/development/python.svg
+    url: https://www.python.org/
+    section: Development
 
   - name: TypeScript
     description: Frontend Development
-    imagePath: https://www.svgrepo.com/show/354478/typescript-icon.svg
+    imagePath: /static/img/techstack/development/typescript.svg
     url: https://www.typescriptlang.org/
+    section: Development
 
-  - name: Kubernetes
-    description: Container Orchestration
-    imagePath: https://www.svgrepo.com/show/448233/kubernetes.svg
-    url: https://kubernetes.io/
+  - name: Rust
+    description: Performance-Oriented Systems Development
+    imagePath: /static/img/techstack/development/rust.svg
+    url: https://www.rust-lang.org/
+    section: Development
 
-  - name: Fleet
-    description: Continuous Delivery with GitOps
-    imagePath: https://fleet.rancher.io/img/logo.svg
-    url: https://fleet.rancher.io/
+  - name: HTMX
+    description: High Power Tools for HTML
+    imagePath: /static/img/techstack/frontend/htmx.svg
+    url: https://htmx.org/
+    section: Frontend
 
   - name: React
-    description: Frontend Development
-    imagePath: https://www.svgrepo.com/show/493719/react-javascript-js-framework-facebook.svg
+    description: Component-Based UI Development
+    imagePath: /static/img/techstack/frontend/react.svg
     url: https://react.dev/
+    section: Frontend
+
+  - name: Svelte
+    description: Web Application Framework
+    imagePath: /static/img/techstack/frontend/svelte.svg
+    url: https://svelte.dev/
+    section: Frontend
 
   - name: Tailwind CSS
     description: UI Design
-    imagePath: https://www.svgrepo.com/show/374118/tailwind.svg
+    imagePath: /static/img/techstack/frontend/tailwindcss.svg
     url: https://tailwindcss.com/
+    section: Frontend
 
   - name: templ
     description: HTML Templating in Go
-    imagePath: https://templ.guide/img/logo.svg
+    imagePath: /static/img/techstack/frontend/templ.svg
     url: https://templ.guide/
+    section: Frontend
+
+  - name: Kubernetes
+    description: Container Orchestration
+    imagePath: /static/img/techstack/devops/k8s.svg
+    url: https://kubernetes.io/
+    section: DevOps
+
+  - name: Docker
+    description: Containerization
+    imagePath: /static/img/techstack/devops/docker.svg
+    url: https://www.docker.com/
+    section: DevOps
+
+  - name: Helm
+    description: Kubernetes Package Manager
+    imagePath: /static/img/techstack/devops/helm.svg
+    url: https://helm.sh/
+    section: DevOps
+
+  - name: Rancher
+    description: Kubernetes Management
+    imagePath: /static/img/techstack/devops/rancher.svg
+    url: https://rancher.com/
+    section: DevOps
+
+  - name: Fleet
+    description: Continuous Delivery with GitOps
+    imagePath: /static/img/techstack/devops/fleet.svg
+    url: https://fleet.rancher.io/
+    section: DevOps
+
+  - name: Azure
+    description: Microsoft Cloud Services
+    imagePath: /static/img/techstack/cloud/azure.svg
+    url: https://azure.microsoft.com/
+    section: Cloud
+
+  - name: AWS
+    description: Amazon Web Services
+    imagePath: /static/img/techstack/cloud/aws.svg
+    url: https://aws.amazon.com/
+    section: Cloud
+
+  - name: Google Cloud
+    description: Google Cloud Platform
+    imagePath: /static/img/techstack/cloud/gcp.svg
+    url: https://cloud.google.com/
+    section: Cloud
 
   - name: GitLab CI/CD
-    description: Continuous Integration
-    imagePath: https://www.svgrepo.com/show/448226/gitlab.svg
+    description: GitLab's integrated CI/CD
+    imagePath: /static/img/techstack/cicd/gitlab.svg
     url: https://gitlab.com/
+    section: CI/CD Tools
+
+  - name: GitHub Actions
+    description: GitHub's integrated CI/CD
+    imagePath: /static/img/techstack/cicd/github-actions.svg
+    url: https://github.com/features/actions
+    section: CI/CD Tools

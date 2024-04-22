@@ -2,31 +2,74 @@ package home
 
 import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
 
+type StackSection struct {
+	name  string
+	items []config.TechStackItem
+}
+
+func newStackSections(items ...config.TechStackItem) []StackSection {
+	var sections []string
+	unique := make(map[string]struct{})
+	for _, i := range items {
+		if _, ok := unique[i.Section]; !ok {
+			sections = append(sections, i.Section)
+			unique[i.Section] = struct{}{}
+		}
+	}
+
+	var stackSections []StackSection
+	for _, s := range sections {
+		var stackSection StackSection
+		for _, i := range items {
+			if i.Section == s {
+				stackSection.name = s
+				stackSection.items = append(stackSection.items, i)
+			}
+		}
+		stackSections = append(stackSections, stackSection)
+	}
+	return stackSections
+}
+
 templ TechStack(items ...config.TechStackItem) {
 	<section class="text-gray-600 body-font">
 		<div class="container px-5 py-24 mx-auto">
-			<div class="flex flex-wrap w-full mb-20">
+			<div class="flex flex-wrap w-full mb-16">
 				<div class="lg:w-1/2 w-full mb-6 lg:mb-0">
 					<h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Tech Stack</h1>
 					<div class="h-1 w-20 bg-indigo-500 rounded"></div>
 				</div>
 			</div>
-			<div class="flex flex-wrap -m-4">
-				for _, item := range items {
-					@techStackCard(item.Name, item.Description, item.ImagePath, item.Url)
-				}
-			</div>
+			for _, section := range newStackSections(items...) {
+				@stackSection(section)
+			}
 		</div>
 	</section>
 }
 
+templ stackSection(section StackSection) {
+	<details class="mb-10 ml-4 select-none" open>
+		<summary class="cursor-pointer inline-block">
+			<h2 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{ section.name }</h2>
+			<div class="flex flex-wrap w-full mb-4">
+				<div class="h-1 w-20 bg-indigo-500 rounded"></div>
+			</div>
+		</summary>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+			for _, item := range section.items {
+				@techStackCard(item.Name, item.Description, item.ImagePath, item.Url)
+			}
+		</div>
+	</details>
+}
+
 templ techStackCard(name, description, imagePath, url string) {
-	<div class="p-4 md:w-1/4 sm:w-1/2 w-full transition duration-300 ease-in-out">
+	<div class="p-4 transition duration-300 ease-in-out h-full">
 		<a href={ templ.URL(url) }>
-			<div class="transform hover:scale-105 border-2 border-gray-200 px-4 py-6 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 dark:border-gray-700 dark:from-gray-700 dark:to-gray-800">
+			<div class="h-full transform hover:scale-105 border-2 border-gray-200 px-4 py-6 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 dark:border-gray-700 dark:from-gray-700 dark:to-gray-800">
 				<img class="h-40 rounded w-full object-scale-down object-center mb-6" src={ imagePath } alt="@name"/>
 				<h3 class="tracking-widest text-white text-xs font-medium title-font">{ name }</h3>
-				<h2 class="text-lg text-white font-medium title-font mb-4">{ description }</h2>
+				<h4 class="text-lg text-white font-medium title-font mb-4">{ description }</h4>
 			</div>
 		</a>
 	</div>

@@ -43,14 +43,15 @@ func main() {
 	}
 
 	// Generate the static site
-	err = generator.GenerateStaticSite(r, "./public", os.DirFS("."))
-	if err != nil {
-		log.Error("Failed to generate static site", "error", err)
-		panic(err)
-	}
-
-	if debug {
-		if err := r.Run(":8080"); err != nil {
+	switch debug {
+	case false:
+		err = generator.GenerateStaticSite(r, "./public", os.DirFS("."))
+		if err != nil {
+			log.Error("Failed to generate static site", "error", err)
+			panic(err)
+		}
+	case true:
+		if err = r.Run(":8080"); err != nil {
 			log.Error("Failed to run http server", "error", err)
 			os.Exit(1)
 		}
