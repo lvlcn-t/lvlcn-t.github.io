@@ -1,8 +1,8 @@
 module github.com/lvlcn-t/ChronoTemplify
 
-go 1.22
+go 1.23
 
-toolchain go1.22.2
+toolchain go1.23.0
 
 require (
 	github.com/a-h/templ v0.2.771
