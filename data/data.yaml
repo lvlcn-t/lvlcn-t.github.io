@@ -2,7 +2,7 @@ kind: Data
 metadata:
   name: Tom
   role: Software Engineer / DevOps Engineer
-  image: https://avatars.githubusercontent.com/u/75443136
+  image: /static/img/profile.jpg
   aboutMe: |
     I am a Software Engineer and DevOps Specialist with extensive experience in Container as a Service (CaaS) and Cloud Native technologies.
     I specialize in orchestrating containerized applications using Kubernetes, developing 
@@ -36,11 +36,11 @@ techStack:
     url: https://www.typescriptlang.org/
     section: Development
 
-  - name: Rust
-    description: Performance-Oriented Systems Development
-    imagePath: /static/img/techstack/development/rust.svg
-    url: https://www.rust-lang.org/
-    section: Development
+  # - name: Rust
+  #   description: Performance-Oriented Systems Development
+  #   imagePath: /static/img/techstack/development/rust.svg
+  #   url: https://www.rust-lang.org/
+  #   section: Development
 
   - name: HTMX
     description: High Power Tools for HTML
@@ -108,17 +108,17 @@ techStack:
     url: https://azure.microsoft.com/
     section: Cloud
 
-  - name: AWS
-    description: Amazon Web Services
-    imagePath: /static/img/techstack/cloud/aws.svg
-    url: https://aws.amazon.com/
-    section: Cloud
+  # - name: AWS
+  #   description: Amazon Web Services
+  #   imagePath: /static/img/techstack/cloud/aws.svg
+  #   url: https://aws.amazon.com/
+  #   section: Cloud
 
-  - name: Google Cloud
-    description: Google Cloud Platform
-    imagePath: /static/img/techstack/cloud/gcp.svg
-    url: https://cloud.google.com/
-    section: Cloud
+  # - name: Google Cloud
+  #   description: Google Cloud Platform
+  #   imagePath: /static/img/techstack/cloud/gcp.svg
+  #   url: https://cloud.google.com/
+  #   section: Cloud
 
   - name: GitLab CI/CD
     description: GitLab's integrated CI/CD
