@@ -8,7 +8,7 @@ package home
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
+import "github.com/lvlcn-t/lvlcn-t.github.io/pkg/config"
 
 type StackSection struct {
 	name  string

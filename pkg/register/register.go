@@ -1,9 +1,9 @@
 package register
 
 import (
-	"github.com/lvlcn-t/ChronoTemplify/pkg/handlers"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/pages"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/pages/projects"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/handlers"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/pages"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/pages/projects"
 )
 
 var HandlerMap = map[string]handlers.HandlerConstructor{

@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/config"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/config"
 )
 
 type HandlerConstructor func(data *config.Data) Handler

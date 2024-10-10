@@ -6,10 +6,10 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/lvlcn-t/ChronoTemplify/internal/generator"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/config"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/register"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/renderer"
+	"github.com/lvlcn-t/lvlcn-t.github.io/internal/generator"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/config"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/register"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/renderer"
 )
 
 const (

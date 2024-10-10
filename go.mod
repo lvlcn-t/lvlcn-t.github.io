@@ -1,4 +1,4 @@
-module github.com/lvlcn-t/ChronoTemplify
+module github.com/lvlcn-t/lvlcn-t.github.io
 
 go 1.23
 

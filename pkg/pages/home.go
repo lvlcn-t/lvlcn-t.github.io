@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/components/layout"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/config"
-	"github.com/lvlcn-t/ChronoTemplify/pkg/handlers"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/components/layout"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/config"
+	"github.com/lvlcn-t/lvlcn-t.github.io/pkg/handlers"
 )
 
 var _ handlers.Handler = (*homeHandler)(nil)

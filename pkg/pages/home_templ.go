@@ -8,8 +8,8 @@ package pages
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/lvlcn-t/ChronoTemplify/pkg/components/home"
-import "github.com/lvlcn-t/ChronoTemplify/pkg/config"
+import "github.com/lvlcn-t/lvlcn-t.github.io/pkg/components/home"
+import "github.com/lvlcn-t/lvlcn-t.github.io/pkg/config"
 
 func Home(data *config.Data) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
