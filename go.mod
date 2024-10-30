@@ -5,7 +5,7 @@ go 1.23
 toolchain go1.23.1
 
 require (
-	github.com/a-h/templ v0.2.778
+	github.com/a-h/templ v0.2.793
 	github.com/gin-gonic/gin v1.10.0
 	gopkg.in/yaml.v2 v2.4.0
 )
