@@ -1,11 +1,12 @@
 module github.com/lvlcn-t/lvlcn-t.github.io
 
-go 1.23
+go 1.23.0
+
 toolchain go1.24.1
 
 require (
 	github.com/a-h/templ v0.3.865
-	github.com/gin-gonic/gin v1.10.0
+	github.com/gin-gonic/gin v1.10.1
 	gopkg.in/yaml.v2 v2.4.0
 )
 
