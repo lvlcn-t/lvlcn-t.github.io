@@ -1,0 +1,49 @@
+{{ $icon := .Get "icon" | default "check" }}
+{{ $md := .Get "md" | default false }}
+{{ $header := .Get "header" }}
+{{ $company := .Get "company" }}
+{{ $badge := .Get "badge" }}
+{{ $subheader := .Get "subheader" }}
+<li>
+  <div class="flex">
+    <div
+      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full ltr:-ml-12 rtl:-mr-[79px] mt-5"
+    >
+      {{ partial "icon" $icon }}
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl flex-1 ms-6 mb-10 break-words">
+      <div class="min-w-0 flex-1 text-left">
+        <div class="flex items-baseline justify-between gap-4">
+          {{ if $header }}
+            <h2 class="pb-2" style="margin: 0;">{{ $header }}</h2>
+          {{ end }}
+
+          {{ if $badge }}
+            <div class="shrink-0">
+              {{ partial "badge" $badge }}
+            </div>
+          {{ end }}
+        </div>
+
+        {{ if $company }}
+          <p class="mt-1 mb-2 text-base font-medium text-neutral-700 dark:text-neutral-300">
+            {{ $company }}
+          </p>
+        {{ end }}
+
+        {{ if $subheader }}
+          <p class="mt-1 mb-2 text-sm font-normal text-neutral-500 dark:text-neutral-400">
+            {{ $subheader }}
+          </p>
+        {{ end }}
+      </div>
+      <div class="mb-6 mt-4">
+        {{ if $md }}
+          {{- .Inner | markdownify -}}
+        {{ else }}
+          {{- .Inner -}}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</li>
