@@ -2,8 +2,16 @@
 {{ $md := .Get "md" | default false }}
 {{ $header := .Get "header" }}
 {{ $company := .Get "company" }}
+{{ $companyIcon := .Get "company-icon" }}
+{{ $companyImgPath := .Get "company-img" }}
 {{ $badge := .Get "badge" }}
 {{ $subheader := .Get "subheader" }}
+{{ $companyImg := "" }}
+{{ if $companyImgPath }}
+  {{ with resources.Get $companyImgPath }}
+    {{ $companyImg = .RelPermalink }}
+  {{ end }}
+{{ end }}
 <li>
   <div class="flex">
     <div
@@ -26,8 +34,17 @@
         </div>
 
         {{ if $company }}
-          <p class="mt-1 mb-2 text-base font-medium text-neutral-700 dark:text-neutral-300">
-            {{ $company }}
+          <p class="mt-1 mb-2 text-base font-medium text-neutral-700 dark:text-neutral-300 flex items-center gap-2">
+            {{ if $companyImg }}
+              <img src="{{ $companyImg }}" alt="{{ $company }} logo" class="w-4 object-contain shrink-0" style="margin: 0;" loading="lazy" decoding="async" />
+            {{ else }}
+              {{ with $companyIcon }}
+                <span class="inline-flex h-5 w-5 items-center justify-center shrink-0">
+                  {{ partial "icon.html" . }}
+                </span>
+              {{ end }}
+            {{ end }}
+            <span>{{ $company }}</span>
           </p>
         {{ end }}
 

@@ -1,0 +1,14 @@
+{{- $name := . -}}
+{{- $icon := resources.Get (print "icons/" $name ".svg") -}}
+{{- if $icon -}}
+  <span class="relative block icon">
+    {{- $icon.Content | safeHTML -}}
+  </span>
+{{- else -}}
+  {{- $localPath := print "assets/icons/" $name ".svg" -}}
+  {{- if fileExists $localPath -}}
+    <span class="relative block icon">
+      {{- readFile $localPath | safeHTML -}}
+    </span>
+  {{- end -}}
+{{- end -}}

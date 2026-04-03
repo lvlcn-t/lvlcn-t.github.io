@@ -14,7 +14,7 @@
 {{ $items := .Get "items" }}
 
 <details
-  class="group {{ if $isSeparated }}rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden{{ else }}border-none{{ end }}"
+  class="group {{ if $isSeparated }}rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden{{ else }}border-none{{ end }} select-none"
   data-accordion-item
   {{ if $isOpen }}open{{ end }}
 >
