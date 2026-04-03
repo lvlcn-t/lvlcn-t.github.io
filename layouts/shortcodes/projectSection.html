@@ -1,0 +1,17 @@
+{{ $title := .Get "title" }}
+{{ $open := .Get "open" | default false }}
+{{ $isOpen := or (eq $open true) (eq $open "true") }}
+
+<details class="group mt-10 first:mt-8 rounded-lg border border-neutral-200 dark:border-neutral-700" {{ if $isOpen }}open{{ end }}>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+    <span>{{ $title }}</span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      {{ partial "icon.html" "chevron-down" }}
+    </span>
+  </summary>
+  <div class="px-4 pb-4">
+    <div class="grid gap-4 md:grid-cols-2">
+      {{ .Inner }}
+    </div>
+  </div>
+</details>

@@ -6,37 +6,42 @@ title = "lvlcn-t"
 enableRobotsTXT = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS", "JSON"]
+
+[[menus.main]]
+name = "Projects"
+url = "/projects/"
+weight = 10
 
 [params]
-  colorScheme = "ocean"
-  defaultAppearance = "dark"
-  autoSwitchAppearance = true
-  enableSearch = false
-  enableCodeCopy = false
-  description = "Tom's personal landing page"
+colorScheme = "ocean"
+defaultAppearance = "light"
+autoSwitchAppearance = false
+enableSearch = false
+enableCodeCopy = false
+description = "Tom's personal landing page"
 
-  [params.header]
-    layout = "fixed"
+[params.header]
+layout = "fixed"
 
-  [params.footer]
-    showMenu = false
-    showCopyright = true
-    showThemeAttribution = false
-    showAppearanceSwitcher = true
-    showScrollToTop = true
+[params.footer]
+showMenu = false
+showCopyright = true
+showThemeAttribution = false
+showAppearanceSwitcher = true
+showScrollToTop = true
 
-  [params.homepage]
-    layout = "profile"
-    showRecent = false
+[params.homepage]
+layout = "profile"
+showRecent = false
 
-  [params.author]
-    name = "Tom Vendolsky"
-    image = "img/profile.jpg"
-    headline = "Platform Engineer"
-    bio = "Platform engineer focused on cloud and automation"
-    links = [
-      { github = "https://github.com/lvlcn-t" },
-      { linkedin = "https://linkedin.com/in/tom-vendolsky" },
-      { bluesky = "https://bsky.app/profile/lvlcn-t.dev" }
-    ]
+[params.author]
+name = "Tom Vendolsky"
+image = "img/profile.jpg"
+headline = "Platform Engineer"
+bio = "Platform engineer focused on cloud and automation"
+links = [
+  { github = "https://github.com/lvlcn-t" },
+  { linkedin = "https://linkedin.com/in/tom-vendolsky" },
+  { bluesky = "https://bsky.app/profile/lvlcn-t.dev" },
+]

@@ -18,6 +18,7 @@ team enablement.
     icon="worktree"
     header="DevOps Engineer"
     company="Deutsche Telekom IT"
+    company-img="img/telekom.png"
     badge="Feb 2025 - Present"
     subheader="Bamberg, Bavaria, Germany (Hybrid)"
     md="true"
@@ -40,6 +41,7 @@ with a focus on secure automation, standardization, and resilience.
     icon="graduation-cap"
     header="Apprentice"
     company="Deutsche Telekom AG"
+    company-img="img/telekom.png"
     badge="Sep 2022 - Feb 2025"
     subheader="Greater Nuremberg Metropolitan Area (On-site)"
     md="true"
@@ -56,6 +58,10 @@ automation, and internal tooling used at scale.
   {{< /timelineItem >}}
 {{< /timeline >}}
 
+{{< button href="/projects/" target="_self" >}}
+View my projects
+{{< /button >}}
+
 ## Skills
 
 {{< accordion mode="multiple" separated="true" >}}
@@ -68,9 +74,37 @@ automation, and internal tooling used at scale.
   {{< /accordionItem >}}
 
   {{< accordionItem
-    title="Cloud, Infrastructure, and Orchestration"
+    title="Cloud Platforms"
     icon="cloud"
-    items="Microsoft Azure|Google Cloud Platform|Amazon Web Services|Kubernetes|Docker|Helm|Rancher|ArgoCD|Rancher Fleet|Bicep|Terraform|RKE1 / RKE2|Azure Kubernetes Service (AKS)|Azure Arc|Azure Container Apps|Azure App Service|Azure Functions"
+    items="Microsoft Azure|Google Cloud Platform|Amazon Web Services"
+  >}}
+  {{< /accordionItem >}}
+
+  {{< accordionItem
+    title="Containers and Orchestration"
+    icon="kubernetes"
+    items="Kubernetes|Docker|Helm|Rancher|RKE1 / RKE2|Azure Kubernetes Service (AKS)|Azure Arc"
+  >}}
+  {{< /accordionItem >}}
+
+  {{< accordionItem
+    title="Infrastructure as Code"
+    icon="file-lines"
+    items="Bicep|Terraform"
+  >}}
+  {{< /accordionItem >}}
+
+  {{< accordionItem
+    title="GitOps and CI/CD"
+    icon="worktree"
+    items="ArgoCD|Rancher Fleet|GitLab CI/CD|GitHub Actions|Renovate|Dependabot"
+  >}}
+  {{< /accordionItem >}}
+
+  {{< accordionItem
+    title="PaaS and Serverless"
+    icon="cloud-moon"
+    items="Azure Container Apps|Azure App Service|Azure Functions"
   >}}
   {{< /accordionItem >}}
 
@@ -82,9 +116,16 @@ automation, and internal tooling used at scale.
   {{< /accordionItem >}}
 
   {{< accordionItem
-    title="Version Control, Team collaboration, and CI/CD"
-    icon="worktree"
-    items="Git|GitLab|GitLab CI/CD|GitHub|GitHub Actions|Renovate|Dependabot|Jira|Confluence|Obsidian|Microsoft Teams"
+    title="Version Control"
+    icon="fork"
+    items="Git|GitLab|GitHub"
+  >}}
+  {{< /accordionItem >}}
+
+  {{< accordionItem
+    title="Collaboration and Tooling"
+    icon="comment"
+    items="GitLab|Docusaurus|Obsidian|Jira|Confluence|Microsoft Teams"
   >}}
   {{< /accordionItem >}}
 
